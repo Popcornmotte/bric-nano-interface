@@ -80,12 +80,13 @@ void KEY_Listen(void)
             //}
             if (lastKey != 0) {
                 selection = (selection+1)%optionCount;
+                lastKey = 0;
             }
             
             //GUI_DrawRectangle(40, 40, 60, 60, WHITE, DRAW_FULL, DOT_PIXEL_DFT);
             //GUI_DrawRectangle(40, 40, 60, 60, RED, DRAW_EMPTY, DOT_PIXEL_DFT);
             //GUI_DisString_EN(43, 40, "U", &Font24, GUI_BACKGROUND, BLUE);
-            lastKey = 0;
+            
         }
         if(GET_KEY_DOWN == 0) {
             //while(GET_KEY_DOWN == 0) {
@@ -94,11 +95,12 @@ void KEY_Listen(void)
             //}
             if (lastKey != 1) {
                 selection = (selection-1)%optionCount;
+                lastKey = 1;
             }
             //GUI_DrawRectangle(40, 80, 60, 100, WHITE, DRAW_FULL, DOT_PIXEL_DFT);
             //GUI_DrawRectangle(40, 80, 60, 100, RED, DRAW_EMPTY, DOT_PIXEL_DFT);
             //GUI_DisString_EN(43, 80, "D", &Font24, GUI_BACKGROUND, BLUE);
-            lastKey = 1;
+
         }
         
         if(lastSelection!=selection){
