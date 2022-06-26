@@ -11,7 +11,7 @@
 
 
 int selection = 0;
-int optionCount = 2;
+int optionCount = 3;
 
 // if use 2019-06-20-raspbian-buster
 // sudo nano /boot/config.txt
@@ -29,6 +29,7 @@ void Draw_Init(void)
 
     GUI_DisString_EN(10, 55, "- Option 1", &Font12, GUI_BACKGROUND, WHITE);
 
+    GUI_DisString_EN(10, 70, "- Option 2", &Font12, GUI_BACKGROUND, WHITE);
 
     //GUI_DisString_EN(10, 100, "Debug", &Font16, WHITE, BLACK);
 
@@ -114,6 +115,10 @@ void KEY_Listen(void)
             case 1:
                 //GUI_DrawRectangle(8, 50, 240, 70, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
                 GUI_DisString_EN(10, 55, "- Option 1", &Font12, GUI_BACKGROUND, YELLOW);
+                break;
+            case 2:
+                //GUI_DrawRectangle(8, 50, 240, 70, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
+                GUI_DisString_EN(10, 70, "- Option 2", &Font12, GUI_BACKGROUND, YELLOW);
                 break;
             }
         }
