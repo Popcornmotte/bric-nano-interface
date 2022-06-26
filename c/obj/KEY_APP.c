@@ -29,7 +29,7 @@ void Draw_Init(void)
     GUI_DisString_EN(10, 55, "- Option 1", &Font12, GUI_BACKGROUND, WHITE);
 
 
-    GUI_DisString_EN(10, 100, "Debug", &Font16, WHITE, BLACK);
+    //GUI_DisString_EN(10, 100, "Debug", &Font16, WHITE, BLACK);
 
 
 
@@ -104,9 +104,11 @@ void KEY_Listen(void)
             Draw_Init();
             switch (selection) {
             case 0:
-                GUI_DisString_EN(10, 40, "- Option 0", &Font12, WHITE, BLACK);
+                GUI_DrawRectangle(8, 35, 240, 55, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
+                //GUI_DisString_EN(10, 40, "- Option 0", &Font12, WHITE, BLACK);
             case 1:
-                GUI_DisString_EN(10, 55, "- Option 1", &Font12, WHITE, BLACK);
+                GUI_DrawRectangle(8, 50, 240, 70, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
+                //GUI_DisString_EN(10, 55, "- Option 1", &Font12, WHITE, BLACK);
             }
         }
         
