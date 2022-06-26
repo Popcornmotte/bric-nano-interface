@@ -102,7 +102,7 @@ void KEY_Listen(void)
         }
         
         if(lastSelection!=selection){
-            //Draw_Init();
+            Draw_Init();
             switch (selection) {
             case 0:
                 //GUI_DrawRectangle(8, 35, 240, 55, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
