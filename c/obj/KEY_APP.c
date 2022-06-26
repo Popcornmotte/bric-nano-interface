@@ -9,6 +9,10 @@
 #include "LCD_Driver.h"
 // #include "Debug.h"
 
+
+short selection = 0;
+short optionCount = 2;
+
 // if use 2019-06-20-raspbian-buster
 // sudo nano /boot/config.txt
 // add:
@@ -18,7 +22,13 @@ void Draw_Init(void)
 {
     LCD_Clear(BLACK);
 
-    GUI_DisString_EN(10, 10, "Main Menu", &Font16, GUI_BACKGROUND, WHITE);
+    GUI_DisString_EN(10, 10, "Main Menu", &Font20, GUI_BACKGROUND, WHITE);
+
+    GUI_DisString_EN(10, 40, "- Option 0", &Font12, GUI_BACKGROUND, WHITE);
+
+    GUI_DisString_EN(10, 55, "- Option 1", &Font12, GUI_BACKGROUND, WHITE);
+
+
 
 //    /* Press */
 //    GUI_DrawRectangle(40, 60, 60, 80, RED, DRAW_EMPTY, DOT_PIXEL_DFT);
@@ -56,7 +66,40 @@ void Draw_Init(void)
 void KEY_Listen(void)
 {
     Draw_Init();
-    for(;;) {/*
+    for(;;) {
+        short lastSelection = selection;
+        if(GET_KEY_UP == 0) {
+            //while(GET_KEY_UP == 0) {
+                //GUI_DrawRectangle(40, 40, 60, 60, BLUE, DRAW_FULL, DOT_PIXEL_DFT);
+                // GUI_DisString_EN(43, 40, "U", &Font24, GUI_BACKGROUND, BLUE);
+            //}
+            selection = (selection+1)%optionCount;
+            //GUI_DrawRectangle(40, 40, 60, 60, WHITE, DRAW_FULL, DOT_PIXEL_DFT);
+            //GUI_DrawRectangle(40, 40, 60, 60, RED, DRAW_EMPTY, DOT_PIXEL_DFT);
+            //GUI_DisString_EN(43, 40, "U", &Font24, GUI_BACKGROUND, BLUE);
+        }
+        if(GET_KEY_DOWN == 0) {
+            //while(GET_KEY_DOWN == 0) {
+                //GUI_DrawRectangle(40, 80, 60, 100, BLUE, DRAW_FULL, DOT_PIXEL_DFT);
+                // GUI_DisString_EN(43, 80, "D", &Font24, GUI_BACKGROUND, BLUE);
+            //}
+            selection = (selection+1)%optionCount;
+            //GUI_DrawRectangle(40, 80, 60, 100, WHITE, DRAW_FULL, DOT_PIXEL_DFT);
+            //GUI_DrawRectangle(40, 80, 60, 100, RED, DRAW_EMPTY, DOT_PIXEL_DFT);
+            //GUI_DisString_EN(43, 80, "D", &Font24, GUI_BACKGROUND, BLUE);
+        }
+        
+        if(lastSelection!=selection){
+            Draw_Init();
+            switch (selection) {
+            case 0:
+                GUI_DisString_EN(10, 40, "- Option 0", &Font12, WHITE, BLACK);
+            case 1:
+                GUI_DisString_EN(10, 55, "- Option 1", &Font12, WHITE, BLACK);
+            }
+        }
+        
+        /*
         if(GET_KEY_UP == 0) {
             while(GET_KEY_UP == 0) {
                 GUI_DrawRectangle(40, 40, 60, 60, BLUE, DRAW_FULL, DOT_PIXEL_DFT);
