@@ -78,7 +78,7 @@ void KEY_Listen(void)
                 //GUI_DrawRectangle(40, 40, 60, 60, BLUE, DRAW_FULL, DOT_PIXEL_DFT);
                 // GUI_DisString_EN(43, 40, "U", &Font24, GUI_BACKGROUND, BLUE);
             //}
-            if (lastKey == 0) {
+            if (lastKey != 0) {
                 selection = (selection+1)%optionCount;
             }
             
@@ -92,7 +92,7 @@ void KEY_Listen(void)
                 //GUI_DrawRectangle(40, 80, 60, 100, BLUE, DRAW_FULL, DOT_PIXEL_DFT);
                 // GUI_DisString_EN(43, 80, "D", &Font24, GUI_BACKGROUND, BLUE);
             //}
-            if (lastKey == 1) {
+            if (lastKey != 1) {
                 selection = (selection-1)%optionCount;
             }
             //GUI_DrawRectangle(40, 80, 60, 100, WHITE, DRAW_FULL, DOT_PIXEL_DFT);
