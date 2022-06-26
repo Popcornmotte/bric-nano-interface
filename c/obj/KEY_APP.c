@@ -24,7 +24,7 @@ void Draw_Init(void)
 
     GUI_DisString_EN(10, 10, "Main Menu", &Font16, GUI_BACKGROUND, WHITE);
 
-    GUI_DrawRectangle(8, 35, 240, 55, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
+    //GUI_DrawRectangle(8, 35, 240, 55, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT); Doesnt Work??
     GUI_DisString_EN(10, 40, "- Option 0", &Font12, GUI_BACKGROUND, WHITE);
 
     GUI_DisString_EN(10, 55, "- Option 1", &Font12, GUI_BACKGROUND, WHITE);
@@ -105,11 +105,11 @@ void KEY_Listen(void)
             //Draw_Init();
             switch (selection) {
             case 0:
-                GUI_DrawRectangle(8, 35, 240, 55, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
-                //GUI_DisString_EN(10, 40, "- Option 0", &Font12, WHITE, BLACK);
+                //GUI_DrawRectangle(8, 35, 240, 55, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
+                GUI_DisString_EN(10, 40, "- Option 0", &Font12, GUI_BACKGROUND, YELLOW);
             case 1:
-                GUI_DrawRectangle(8, 50, 240, 70, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
-                //GUI_DisString_EN(10, 55, "- Option 1", &Font12, WHITE, BLACK);
+                //GUI_DrawRectangle(8, 50, 240, 70, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
+                GUI_DisString_EN(10, 55, "- Option 1", &Font12, GUI_BACKGROUND, YELLOW);
             }
         }
         
