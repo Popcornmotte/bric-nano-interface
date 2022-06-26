@@ -22,11 +22,14 @@ void Draw_Init(void)
 {
     LCD_Clear(BLACK);
 
-    GUI_DisString_EN(10, 10, "Main Menu", &Font20, GUI_BACKGROUND, WHITE);
+    GUI_DisString_EN(10, 10, "Main Menu", &Font16, GUI_BACKGROUND, WHITE);
 
     GUI_DisString_EN(10, 40, "- Option 0", &Font12, GUI_BACKGROUND, WHITE);
 
     GUI_DisString_EN(10, 55, "- Option 1", &Font12, GUI_BACKGROUND, WHITE);
+
+
+    GUI_DisString_EN(10, 100, "Debug", &Font16, WHITE, BLACK);
 
 
 
