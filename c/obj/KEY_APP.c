@@ -10,8 +10,8 @@
 // #include "Debug.h"
 
 
-short selection = 0;
-short optionCount = 2;
+int selection = 0;
+int optionCount = 2;
 
 // if use 2019-06-20-raspbian-buster
 // sudo nano /boot/config.txt
@@ -70,16 +70,17 @@ void Draw_Init(void)
 void KEY_Listen(void)
 {
     Draw_Init();
-    short lastKey = -1;
+    int lastKey = -1;
     for(;;) {
-        short lastSelection = selection;
+        int lastSelection = selection;
         if(GET_KEY_UP == 0) {
             while(GET_KEY_UP == 0) {
                 //GUI_DrawRectangle(40, 40, 60, 60, BLUE, DRAW_FULL, DOT_PIXEL_DFT);
                 // GUI_DisString_EN(43, 40, "U", &Font24, GUI_BACKGROUND, BLUE);
             }
             if (lastKey != 0) {
-                selection = 0;//(selection+1)%optionCount;
+                selection = (selection+1)%optionCount;
+                printf("\nSelection is %i",selection);
                 
             }
             
@@ -94,7 +95,8 @@ void KEY_Listen(void)
                 // GUI_DisString_EN(43, 80, "D", &Font24, GUI_BACKGROUND, BLUE);
             }
             if (lastKey != 1) {
-                selection = 1;//(selection-1)%optionCount; 
+                selection = (selection-1)%optionCount; 
+                printf("\nSelection is %i",selection);
             }
             //GUI_DrawRectangle(40, 80, 60, 100, WHITE, DRAW_FULL, DOT_PIXEL_DFT);
             //GUI_DrawRectangle(40, 80, 60, 100, RED, DRAW_EMPTY, DOT_PIXEL_DFT);
