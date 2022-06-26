@@ -74,33 +74,32 @@ void KEY_Listen(void)
     for(;;) {
         short lastSelection = selection;
         if(GET_KEY_UP == 0) {
-            //while(GET_KEY_UP == 0) {
+            while(GET_KEY_UP == 0) {
                 //GUI_DrawRectangle(40, 40, 60, 60, BLUE, DRAW_FULL, DOT_PIXEL_DFT);
                 // GUI_DisString_EN(43, 40, "U", &Font24, GUI_BACKGROUND, BLUE);
-            //}
+            }
             if (lastKey != 0) {
                 selection = (selection+1)%optionCount;
-                lastKey = 0;
+                
             }
             
             //GUI_DrawRectangle(40, 40, 60, 60, WHITE, DRAW_FULL, DOT_PIXEL_DFT);
             //GUI_DrawRectangle(40, 40, 60, 60, RED, DRAW_EMPTY, DOT_PIXEL_DFT);
             //GUI_DisString_EN(43, 40, "U", &Font24, GUI_BACKGROUND, BLUE);
-            
+            lastKey = 0;
         }
         if(GET_KEY_DOWN == 0) {
-            //while(GET_KEY_DOWN == 0) {
+            while(GET_KEY_DOWN == 0) {
                 //GUI_DrawRectangle(40, 80, 60, 100, BLUE, DRAW_FULL, DOT_PIXEL_DFT);
                 // GUI_DisString_EN(43, 80, "D", &Font24, GUI_BACKGROUND, BLUE);
-            //}
+            }
             if (lastKey != 1) {
-                selection = (selection-1)%optionCount;
-                lastKey = 1;
+                selection = (selection-1)%optionCount; 
             }
             //GUI_DrawRectangle(40, 80, 60, 100, WHITE, DRAW_FULL, DOT_PIXEL_DFT);
             //GUI_DrawRectangle(40, 80, 60, 100, RED, DRAW_EMPTY, DOT_PIXEL_DFT);
             //GUI_DisString_EN(43, 80, "D", &Font24, GUI_BACKGROUND, BLUE);
-
+            lastKey = 1;
         }
         
         if(lastSelection!=selection){
@@ -109,9 +108,11 @@ void KEY_Listen(void)
             case 0:
                 //GUI_DrawRectangle(8, 35, 240, 55, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
                 GUI_DisString_EN(10, 40, "- Option 0", &Font12, GUI_BACKGROUND, YELLOW);
+                break;
             case 1:
                 //GUI_DrawRectangle(8, 50, 240, 70, WHITE, DRAW_EMPTY, DOT_PIXEL_DFT);
                 GUI_DisString_EN(10, 55, "- Option 1", &Font12, GUI_BACKGROUND, YELLOW);
+                break;
             }
         }
         
