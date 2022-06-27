@@ -1,14 +1,12 @@
 /*****************************************************************************
-* | File      	:   DEV_Config.c
-* | Author      :   Waveshare team
-* | Function    :   Hardware underlying interface
-* | Info        :
-*                Used to shield the underlying layers of each master 
-*                and enhance portability
+* | File      	:   KEY_APP.c
+* | Author      :   Popcornmotte
+* | Function    :   experimental platform to test BRIC interface functions
+
 *----------------
 * |	This version:   V1.0
-* | Date        :   2018-01-11
-* | Info        :   Basic version
+* | Date        :   2022
+* | Info        :   based on some waveshare stuff 
 *
 ******************************************************************************/
 #ifndef _KEY_APP_H_

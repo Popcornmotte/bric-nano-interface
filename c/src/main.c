@@ -23,16 +23,17 @@ int main(void)
 	LCD_Init(LCD_ScanDir );	
 	
     
-    
+    /*
 	printf("LCD Show \r\n");
 	GUI_Show();
 	DEV_Delay_ms(1000);
+	*/
 	
-	printf("show bmp\r\n");
+	printf("show Splashscreen ;)\r\n");
 	LCD_ShowBmp();
-	DEV_Delay_ms(1000);
+	DEV_Delay_ms(3000);
     
-    KEY_Listen();
+    KEY_Listen(); //in KEY_APP.h
 	//3.System Exit
 	DEV_ModuleExit();
 	return 0;

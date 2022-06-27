@@ -1,7 +1,6 @@
 /*****************************************************************************
 * |	This version:   V1.0
-* | Date        :   2019-07-06
-* | Info        :   Basic version
+* | Date        :   2022
 *
 ******************************************************************************/
 #include "KEY_APP.h"
@@ -17,6 +16,8 @@ int optionCount = 3;
 // sudo nano /boot/config.txt
 // add:
 // gpio=6,19,5,26,13,21,20,16=pu
+
+// the info above this comment need verfication. -Phil
 
 void Draw_Init(void)
 {
@@ -103,6 +104,16 @@ void KEY_Listen(void)
             //GUI_DrawRectangle(40, 80, 60, 100, RED, DRAW_EMPTY, DOT_PIXEL_DFT);
             //GUI_DisString_EN(43, 80, "D", &Font24, GUI_BACKGROUND, BLUE);
             lastKey = 1;
+        }
+        if(GET_KEY3 == 0) {
+            while(GET_KEY3 == 0) {
+                //GUI_DrawRectangle(95, 80, 120, 100, BLUE, DRAW_FULL, DOT_PIXEL_DFT);
+                // GUI_DisString_EN(98, 83, "K3", &Font16, GUI_BACKGROUND, BLUE);
+            }
+            DEV_ModuleExit();
+            //GUI_DrawRectangle(95, 80, 120, 100, WHITE, DRAW_FULL, DOT_PIXEL_DFT);
+            //GUI_DrawRectangle(95, 80, 120, 100, RED, DRAW_EMPTY, DOT_PIXEL_DFT);
+            //GUI_DisString_EN(98, 83, "K3", &Font16, GUI_BACKGROUND, BLUE);
         }
         
         if(lastSelection!=selection){
