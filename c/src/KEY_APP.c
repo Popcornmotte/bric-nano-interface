@@ -6,6 +6,7 @@
 #include "KEY_APP.h"
 #include "LCD_GUI.h"
 #include "LCD_Driver.h"
+#include <bcm2835.h>
 // #include "Debug.h"
 
 
@@ -110,6 +111,8 @@ void KEY_Listen(void)
                 //GUI_DrawRectangle(95, 80, 120, 100, BLUE, DRAW_FULL, DOT_PIXEL_DFT);
                 // GUI_DisString_EN(98, 83, "K3", &Font16, GUI_BACKGROUND, BLUE);
             }
+            bcm2835_spi_end();
+            bcm2835_close();
             DEV_ModuleExit();
             //GUI_DrawRectangle(95, 80, 120, 100, WHITE, DRAW_FULL, DOT_PIXEL_DFT);
             //GUI_DrawRectangle(95, 80, 120, 100, RED, DRAW_EMPTY, DOT_PIXEL_DFT);

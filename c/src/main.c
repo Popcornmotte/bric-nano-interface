@@ -35,7 +35,7 @@ int main(void)
     
     KEY_Listen(); //in KEY_APP.h
 	//3.System Exit
-	DEV_ModuleExit();
+	DEV_ModuleExit(); //causes Segfault
 	return 0;
 	
 }
