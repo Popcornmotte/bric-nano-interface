@@ -1,12 +1,12 @@
 DIR_FONTS = ./Fonts
+DIR_SRC = ./src
 DIR_OBJ = ./obj
-DIR_BIN = ./bin
 
-OBJ_C = $(wildcard ${DIR_FONTS}/*.c ${DIR_OBJ}/*.c)
-OBJ_O = $(patsubst %.c,${DIR_BIN}/%.o,$(notdir ${OBJ_C}))
+OBJ_C = $(wildcard ${DIR_FONTS}/*.c ${DIR_SRC}/*.c)
+OBJ_O = $(patsubst %.c,${DIR_OBJ}/%.o,$(notdir ${OBJ_C}))
 
 TARGET = main
-#BIN_TARGET = ${DIR_BIN}/${TARGET}
+#BIN_TARGET = ${DIR_OBJ}/${TARGET}
 
 CC = gcc
 
@@ -26,12 +26,12 @@ endif
 ${TARGET}:${OBJ_O}
 	$(CC) $(CFLAGS) $(OBJ_O) -o $@ $(LIB)
 
-${DIR_BIN}/%.o : $(DIR_OBJ)/%.c
+${DIR_OBJ}/%.o : $(DIR_SRC)/%.c
 	$(CC) $(CFLAGS) -c  $< -o $@ $(LIB)
 
-${DIR_BIN}/%.o:$(DIR_FONTS)/%.c
+${DIR_OBJ}/%.o:$(DIR_FONTS)/%.c
 	$(CC) $(CFLAGS) -c  $< -o $@ 
 	
 clean :
-	rm $(DIR_BIN)/*.* 
+	rm $(DIR_OBJ)/*.* 
 	rm $(TARGET) 
